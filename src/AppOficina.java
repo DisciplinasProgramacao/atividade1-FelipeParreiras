@@ -37,7 +37,7 @@ public class AppOficina {
             System.out.println("2 - Listar produtos por descrição");
             System.out.println("3 - Buscar produto por ID");
             System.out.println("4 - Listar produto por preço");
-            System.out.println("5 - Listar produto por preço");
+            System.out.println("5 - Listar produto por nome");
             System.out.println("0 - Sair");
             System.out.print("Opção: ");
             opcao = Integer.parseInt(teclado.nextLine());
