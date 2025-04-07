@@ -19,6 +19,10 @@ public abstract class Produto {
         return this.descricao;
     }
 
+    public double getPreco() {
+        return this.precoCusto;
+    }
+
     public abstract double valorDeVenda();
     public abstract String gerarDadosTexto();
 

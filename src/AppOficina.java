@@ -21,10 +21,14 @@ public class AppOficina {
 
         Produto[] produtosPorId = Arrays.copyOf(produtos, produtos.length);
         Produto[] produtosPorDescricao = Arrays.copyOf(produtos, produtos.length);
+        Produto[] produtosPorPreco = Arrays.copyOf(produtos, produtos.length);
+        Produto[] produtosPorNome = Arrays.copyOf(produtos, produtos.length);
 
         IOrdenador<Produto> ordenador = new Mergesort<>();
         ordenador.ordenar(produtosPorId, ComparadoresProduto.porId());
         ordenador.ordenar(produtosPorDescricao, ComparadoresProduto.porDescricao());
+        ordenador.ordenar(produtosPorPreco, ComparadoresProduto.porPreco());
+        ordenador.ordenar(produtosPorNome, ComparadoresProduto.porNome());
 
         int opcao;
         do {
@@ -32,6 +36,8 @@ public class AppOficina {
             System.out.println("1 - Listar produtos por ID");
             System.out.println("2 - Listar produtos por descrição");
             System.out.println("3 - Buscar produto por ID");
+            System.out.println("4 - Listar produto por preço");
+            System.out.println("5 - Listar produto por preço");
             System.out.println("0 - Sair");
             System.out.print("Opção: ");
             opcao = Integer.parseInt(teclado.nextLine());
@@ -53,6 +59,14 @@ public class AppOficina {
                         System.out.println("Encontrado: " + resultado);
                     else
                         System.out.println("Produto não encontrado.");
+                }
+                case 4 -> {
+                    for (Produto p : produtosPorPreco)
+                        System.out.println(p);
+                }
+                case 5 -> {
+                    for (Produto p : produtosPorNome)
+                        System.out.println(p);
                 }
                 case 0 -> System.out.println("Encerrando...");
                 default -> System.out.println("Opção inválida.");
